@@ -4,7 +4,7 @@
   "description": "Sick Fits! An example React, GraphQL, Next and Apollo",
   "main": "index.js",
   "scripts": {
-    "dev": "next -p 7777",
+    "dev": "export SET NODE_OPTIONS=--openssl-legacy-provider && next -p 7777",
     "build": "next build",
     "start": "next start -p 7777",
     "test": "NODE_ENV=test jest --watch"
@@ -63,7 +63,11 @@
   "eslintConfig": {
     "extends": [
       "wesbos"
-    ]
+    ],
+    "rules": {
+      "react/jsx-props-no-spreading": 0,
+      "react/prop-types": 0
+    }
   },
   "jest": {
     "setupFilesAfterEnv": [
